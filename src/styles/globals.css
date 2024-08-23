@@ -1,0 +1,440 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-bar-auto text-white font-semibold font-sans snap-y text-shadow-black-outline;
+    .custom-html-style {
+      @apply text-white w-full;
+      ol, ul {
+        @apply pl-8;
+      }
+      ol {
+        @apply text-lg m-0 list-decimal;
+      }
+      ul {
+        @apply text-lg m-0 list-disc;
+      }
+      hr {
+        @apply my-3;
+      }
+      h1 {
+        @apply text-6xl m-0;
+      }
+      h2 {
+        @apply text-5xl m-0;
+      }
+      h3 {
+        @apply text-4xl m-0;
+      }
+      h4 {
+        @apply text-3xl m-0;
+      }
+      h5 {
+        @apply text-2xl m-0;
+      }
+      h6 {
+        @apply text-xl m-0;
+      }
+      p {
+        @apply text-lg m-0;
+      }
+    }
+    .rc-md-editor.markdown-styles {
+      @apply !bg-neutral-800 !border-none block;
+      .rc-md-navigation .button-wrap {
+        @apply !gap-2;
+        .button {
+          @apply flex items-center rounded-md bg-neutral-700 text-white hover:text-yellow-200 m-0;
+          i {
+            @apply px-2 mr-[2px];
+          }
+        }
+      }
+      .drop-wrap {
+        @apply !bg-neutral-800 shadow-inner shadow-black border-2 border-black rounded-md;
+      }
+      .rc-md-navigation {
+        @apply py-2 !bg-neutral-900 flex gap-2 flex-row flex-wrap justify-between border-none shadow-md shadow-black;
+        h1 {
+        @apply text-6xl;
+        }
+        h2 {
+          @apply text-5xl;
+        }
+        h3 {
+          @apply text-4xl;
+        }
+        h4 {
+          @apply text-3xl;
+        }
+        h5 {
+          @apply text-2xl;
+        }
+        h6 {
+          @apply text-xl;
+        }
+        p {
+          @apply text-lg;
+        }
+      }
+      .editor-container {
+        @apply size-full;
+        .sec-md {
+          .input {
+            @apply text-white bg-neutral-700 size-full shadow-inner shadow-black text-lg text-shadow-black-outline;
+          }
+        }
+        .sec-html .html-wrap {
+          @apply w-full shadow-inner shadow-black border-l-2 border-black !bg-neutral-700;
+        }
+        .section {
+          @apply h-full border-none;
+        }
+      }
+    }
+  }
+  button {
+    @apply text-shadow-black-outline;
+  }
+  body {
+   @apply h-[100vh] bg-neutral-600; 
+    #__next {
+      @apply flex min-w-full max-w-full min-h-full;
+    }
+  }
+}
+
+@layer components {
+  section {
+    @apply flex w-full max-w-[90%] scroll-mt-[84px] lg:scroll-mt-[128px] xl:scroll-mt-[-132px] content-center justify-center gap-4 place-self-center mx-auto;
+  }
+  legend {
+    @apply text-shadow-black-outline;
+  }
+  thead th {
+    @apply min-w-32 whitespace-pre-line bg-neutral-900;
+    button {
+      @apply w-full;
+    }
+  }
+  tbody tr {
+    @apply odd:bg-neutral-800 even:bg-neutral-700;
+  }
+  tbody tr.alternating td {
+    @apply odd:bg-neutral-800 even:bg-neutral-700;
+  }
+  .carousel-slide {
+    @apply transition-transform duration-200 ease-in-out;
+  }
+  .carousel-button {
+    @apply flex absolute size-10 lg:size-12 pb-2 top-0 bottom-0 self-center justify-center items-center bg-neutral-800 text-white rounded-xl border-2 border-black z-10 hover:bg-neutral-400;
+    i:before {
+      @apply text-base lg:text-xl;
+    }
+  }
+  .button-arrows {
+    i:before {
+      @apply text-base xl:text-lg;
+    }
+  }
+  .module-card-button {
+    @apply flex items-center justify-center px-1 rounded-md border-1 border-black bg-neutral-700 text-center shadow-md shadow-black;
+  }
+  .accordion-panel {
+    @apply max-h-0 flex w-full flex-col bg-neutral-700 rounded-b-lg shadow-inner shadow-black;
+  }
+  .accordion-panel, .dropdown-panel {
+    transition: max-height 0.1s ease-in-out, padding-y 0.1s ease-in-out, overflow 0.1s ease-in-out;
+  }
+  .text-hidden {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out 0.1s;
+  }
+  
+  .text-visible {
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+  }
+  .card-stats {
+    @apply grid text-lg;
+    grid-template-columns: 4fr 1fr;
+  }
+  .skill-description {
+    @apply grid grid-cols-1 h-full;
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr minmax(0, 10fr);
+    }
+  }
+  .skill-card-deck {
+    @apply flex flex-col gap-2 p-2 2xl:grid 2xl:grid-cols-2;
+  }
+  .skill-card-deck > :last-child {
+    grid-column: span 2;
+  }
+  .privacy-policy {
+    @apply rounded-xl bg-neutral-900 border-2 border-black shadow-lg shadow-black p-2;
+    h1, h2 {
+      @apply text-yellow-200;
+    }
+    h1 {
+      @apply text-3xl xl:text-4xl;
+    }
+    h2 {
+      @apply text-lg xl:text-xl;
+    }
+    .inset-section {
+      @apply border-2 border-black shadow-inner shadow-black bg-neutral-700 p-2 rounded-md;
+    }
+    ul {
+      @apply list-disc pl-4;
+    }
+    hr {
+      @apply border-t-1 border-white w-full my-1;
+    }
+  }
+}
+
+@layer utilities {
+  .scroll-bar-left {
+    direction: rtl;
+    scrollbar-gutter: stable;
+  }
+  .scroll-bar-left > * {
+    direction: ltr;
+  }
+  .scroll-bar-thin {
+    scrollbar-width: thin;
+  }
+  .scroll-bar-auto {
+    scrollbar-color: #a3a3a3 #171717;
+  }
+  .input-hover {
+    @apply hover:shadow-outline hover:shadow-yellow-200 hover:border-yellow-200;
+  }
+  .bg-hover {
+    @apply hover:bg-neutral-400;
+  }
+  .sticky-header {
+    @apply sticky w-full top-0 z-50;
+  }
+  .sticky-below-header {
+    @apply sticky top-[80px] z-10;
+  }
+  .sticky-table-header {
+    @apply sticky top-0 z-40;
+  }
+  .tfd-link, .home-link {
+    @apply min-w-max self-center w-full py-1;
+  }
+  .tfd-link {
+    @apply rounded-xl px-4;
+  }
+  .home-link, .text-hover {
+    @apply hover:text-yellow-200;
+  }
+  .text-link {
+    @apply text-2xl lg:text-xl xl:text-2xl font-semibold;
+  }
+  .disabled-link {
+    @apply pointer-events-none text-yellow-200 disabled:text-yellow-200;
+  }
+  .accordion-icon {
+    @apply before:text-lg 2xl:before:text-xl;
+  }
+  .tfd-link-icon {
+    @apply before:text-2xl md:before:text-3xl;
+  }
+  .button {
+    @apply justify-center items-center text-white rounded-xl border-2 border-black shadow-md shadow-black disabled:bg-neutral-900 disabled:shadow-md disabled:shadow-black hover:bg-neutral-400;
+  }
+  .button-0 {
+    @apply p-0 text-base lg:text-lg;
+  }
+  .button-sm {
+    @apply py-1 px-2 text-base lg:text-lg;
+  }
+  .button-md {
+    @apply py-2 px-3 text-lg lg:text-xl;
+  }
+  .button-lg {
+    @apply py-3 px-5;
+  }
+  .selected {
+    @apply disabled:text-yellow-200 disabled:border-yellow-200
+  }
+  .disabled { 
+    @apply disabled:text-neutral-500 disabled:border-neutral-950 disabled:hover:text-neutral-500;
+  }
+  .error {
+    @apply disabled:text-red-400 disabled:border-red-400 disabled:hover:text-red-400;
+  }
+  .social {
+    .fa-discord {
+      @apply text-[#7289da];
+    }
+    .fa-twitter { 
+      @apply text-sky-500 hover:text-sky-300 focus:text-sky-300 active:text-sky-300;
+    }
+    .fa-twitch { 
+      @apply text-violet-600 hover:text-violet-400 focus:text-violet-400  active:text-violet-400 ;
+    }
+    .fa-spotify { 
+      @apply text-green-500 hover:text-green-300 focus:text-green-300 active:text-green-300;
+    }
+    .fa-steam { 
+      @apply text-neutral-600 hover:text-neutral-400 focus:text-neutral-400 active:text-neutral-400;
+    }
+    .fa-instagram { 
+      @apply text-fuchsia-600 hover:text-fuchsia-400 focus:text-fuchsia-400 active:text-fuchsia-400;
+    }
+  }
+  .attributes {
+    .label-non-attribute {
+      @apply text-neutral-100;
+    }
+    .label-chill {
+      @apply text-blue-300;
+    }
+    .label-fire {
+      @apply text-red-500;
+    }
+    .label-electric {
+      @apply text-electric;
+    }
+    .label-toxic {
+      @apply text-toxic;
+    }
+    .label-high-value {
+      @apply text-yellow-200;
+    }
+  }
+  .zones {
+    .label-kingston {
+      @apply text-green-200;
+    }
+    .label-sterile-land {
+      @apply text-orange-400;
+    }
+    .label-vespers {
+      @apply text-emerald-600;
+    }
+    .label-echo-swamp {
+      @apply text-lime-400;
+    }
+    .label-agna-desert {
+      @apply text-amber-500;
+    }
+    .label-white-night-gulch {
+      @apply text-lime-300;
+    }
+    .label-hagios {
+      @apply text-orange-300;
+    }
+    .label-fortress {
+      @apply text-sky-200;
+    }
+  }
+  .tiers { 
+    .bg-standard {
+      @apply bg-gradient-to-tl from-blue-400 via-black to-blue-400 shadow-inner shadow-black;
+    }
+    .bg-rare {
+      @apply bg-gradient-to-tl from-purple-500 via-black to-purple-500 shadow-inner shadow-black;
+    }
+    .bg-ultimate {
+      @apply bg-gradient-to-tl from-yellow-200 via-black to-yellow-200 shadow-inner shadow-black;
+    }
+    .bg-transcendent {
+      @apply bg-gradient-to-tl from-red-500 via-black to-red-500 shadow-inner shadow-black;
+    }
+    .bg-rare-ultimate {
+      @apply bg-gradient-to-tl from-yellow-200 via-black to-purple-500 shadow-inner shadow-black;
+    }
+    .bg-standard-radial {
+      @apply bg-gradient-radial from-black via-black to-blue-400 shadow-inner shadow-black;
+    }
+    .bg-rare-radial {
+      @apply bg-gradient-radial from-black via-black to-purple-500 shadow-inner shadow-black;
+    }
+    .bg-ultimate-radial {
+      @apply bg-gradient-radial from-black via-black to-yellow-200 shadow-inner shadow-black;
+    }
+    .bg-transcendent-radial {
+      @apply bg-gradient-radial from-black via-black to-red-500 shadow-inner shadow-black;
+    }
+    .label-standard {
+      @apply text-blue-400;
+    }
+    .label-rare {
+      @apply text-purple-500;
+    }
+    .label-ultimate {
+      @apply text-yellow-200;
+    }
+    .label-transcendent {
+      @apply text-red-500;
+    }
+  }
+   .rounds {
+    .label-general-rounds {
+      @apply text-neutral-100;
+    }
+    .label-high-power-rounds {
+      @apply text-high-power-rounds;
+    }
+    .label-impact-rounds {
+      @apply text-impact-rounds;
+    }
+    .label-special-rounds {
+      @apply text-special-rounds;
+    }
+  }
+  .weapon-image {
+    min-height: 80px;
+    aspect-ratio: 384 / 114;
+  }
+  .external-component-image, .descendant-image, .reactor-image {
+    height: 128px;
+    min-width: 128px;
+  }
+  .module-image {
+    height: 96px;
+    min-width: 96px;
+  }
+  .diamond:before, .diamond:after {
+    @apply bg-black absolute size-[28px] rotate-45 origin-center rounded-md top-[2px] left-[2px]; 
+    content: '';
+  }
+  .hexagon {
+    @apply bg-black absolute w-[30px] h-[17.32px] my-[9.16px] top-[-2.5px] left-[1px];
+  }
+  .hexagon:before, .hexagon:after {
+    @apply absolute border-transparent border-x-[15px] w-0 left-0;
+    content: '';
+  }
+  .hexagon:before {
+    @apply border-b-black border-b-[9.16px] bottom-full;
+  }
+  .hexagon:after {
+    @apply border-t-black border-t-[9.16px] top-full;
+  }
+  .rounded-square:before {
+    @apply bg-black absolute size-9 rounded-md top-[-2px] left-[-2px];
+    content: '';
+  }
+  .rhombus {
+    @apply bg-black absolute w-[32px] h-[5px] my-[16px] top-[-2.5px] ;
+  }
+  .rhombus:before, .rhombus:after {
+    @apply absolute border-transparent border-x-[16px] w-0 left-0;
+    content: '';
+  }
+  .rhombus:before {
+    @apply border-b-black border-b-[18px] bottom-full;
+  }
+  .rhombus:after {
+    @apply border-t-black border-t-[18px] top-full;
+  }
+}
